@@ -1,23 +1,23 @@
-@echo on
-title=¡¾Android¹¤¾ßÏä¡¿@by¡¾Yuanhaha¡¿
+@echo off
+title=ã€Androidå·¥å…·ç®±ã€‘@byã€Yuanhahaã€‘
 :home
-echo ¡¾My toolbox¡¿
-echo ¡¾Ò»¡¢ÖØÆô¡¿
-echo 1£¬¿ª»ú-fastboot
-echo 2£¬¿ª»ú-rec
-echo 3£¬FB-ÏµÍ³
-echo 4£¬FB-rec
-echo ¡¾¶ş¡¢½âBLËø¡¿
-echo 5£¬Google£¬oneplus
-echo 6£¬ÌØÊâ»úĞÍ±£×ÊÁÏ½âËø
-echo 7£¬Ğè½âËøÂëµÄÆäËû»úĞÍ
-echo 8,¡¾Æô¶¯Ò»¸öimg¾µÏñ¡¿
-echo 9,¡¾Ë¢Ğ´Ö¸¶¨·ÖÇø¡¿
-echo 10,¡¾°²×°apk¡¿
-echo ¡¾ÊµÓÃ¹¤¾ß¡¿
-echo 11£¬¼¤»îÌ«¼«µÄÒõÑôÖ®ÃÅ
-echo 12£¬¼¤»î±ùÏä£¨adbÄ£Ê½£©
-set /p ADB=ÊäÈëÄãµÄÑ¡Ôñ:
+echo ã€My toolboxã€‘
+echo ã€ä¸€ã€é‡å¯ã€‘
+echo 1ï¼Œå¼€æœº-fastboot
+echo 2ï¼Œå¼€æœº-rec
+echo 3ï¼ŒFB-ç³»ç»Ÿ
+echo 4ï¼ŒFB-rec
+echo ã€äºŒã€è§£BLé”ã€‘
+echo 5ï¼ŒGoogleï¼Œoneplus
+echo 6ï¼Œç‰¹æ®Šæœºå‹ä¿èµ„æ–™è§£é”
+echo 7ï¼Œéœ€è§£é”ç çš„å…¶ä»–æœºå‹
+echo 8,ã€å¯åŠ¨ä¸€ä¸ªimgé•œåƒã€‘
+echo 9,ã€åˆ·å†™æŒ‡å®šåˆ†åŒºã€‘
+echo 10,ã€å®‰è£…apkã€‘
+echo ã€å®ç”¨å·¥å…·ã€‘
+echo 11ï¼Œæ¿€æ´»å¤ªæçš„é˜´é˜³ä¹‹é—¨
+echo 12ï¼Œæ¿€æ´»å†°ç®±ï¼ˆadbæ¨¡å¼ï¼‰
+set /p ADB=è¾“å…¥ä½ çš„é€‰æ‹©:
 if "%ADB%"=="1" goto reboot-fb
 if "%ADB%"=="2" goto reboot-rec
 if "%ADB%"=="3" goto reboot-fb-sys
@@ -64,27 +64,27 @@ pause
 goto home
 :unlock-code
 pause
-set /p unlock-code=ÄãµÄ½âËøÂë£º
+set /p unlock-code=ä½ çš„è§£é”ç ï¼š
 pause
 cd bin
 ..\ADB\fastboot.exe oem unlock %unlock-code%
 goto home
 :boot-img
-set /p boot=Çë½«imgÎÄ¼şÍÏÈë´Ë´°¿Ú£º
+set /p boot=è¯·å°†imgæ–‡ä»¶æ‹–å…¥æ­¤çª—å£ï¼š
 cd bin
 ..\ADB\fastboot.exe boot %boot%
 pause
 goto home
 :flash-img
-set /p part=ÄãÒªË¢µÄ·ÖÇøÃû³Æ£º
-set /p img=Çë½«¾µÏñÎÄ¼şÍÏÈë´Ë´°¿Ú£º
+set /p part=ä½ è¦åˆ·çš„åˆ†åŒºåç§°ï¼š
+set /p img=è¯·å°†é•œåƒæ–‡ä»¶æ‹–å…¥æ­¤çª—å£ï¼š
 pause
 cd bin
 ..\ADB\fastboot.exe flash %part% %img%
 pause
 goto home
 :install-apk
-set /p apk=Çë½«apkÎÄ¼şÍÏÈë´Ë´°¿Ú£º
+set /p apk=è¯·å°†apkæ–‡ä»¶æ‹–å…¥æ­¤çª—å£ï¼š
 cd bin
 ..\ADB\adb.exe install %apk%
 pause
